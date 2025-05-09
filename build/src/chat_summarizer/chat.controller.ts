@@ -15,4 +15,8 @@ export class ChatController {
   getAll() {
     return this.chatService.findAll();
   }
+ @Post('analyze')
+analyze(@Body('chat') chat: { sender: string; content: string }[]) {
+  return this.chatService.analyze(chat);
+}
 }
